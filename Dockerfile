@@ -6,6 +6,7 @@ RUN npm install -g @graphile/pg-pubsub
 
 EXPOSE 5000
 
+ENV HOST 0.0.0.0
 ENV PORT 5000
 ENV SCHEMA "public,eth"
 ENV PG_USER "vdbm"
@@ -18,6 +19,6 @@ CMD ["/bin/sh", "-c", "postgraphile \
      --plugins @graphile/pg-pubsub --subscriptions --simple-subscriptions \
      --connection postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE} \
      --port ${PORT} \
-     -n 0.0.0.0 \
+     -n ${HOST} \
      --schema ${SCHEMA} \
      --append-plugins postgraphile-plugin-connection-filter"]

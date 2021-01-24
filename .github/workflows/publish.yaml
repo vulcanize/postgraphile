@@ -10,7 +10,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Run docker build
-        run: docker build -t vulcanize/postgraphile .
+        run: make docker-build
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:

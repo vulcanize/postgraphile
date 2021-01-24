@@ -1,9 +1,6 @@
-name: Docker Compose Build
+name: Docker Build
 
-on:
-  push:
-    branches:
-      - master
+on: [pull_request]
 
 jobs:
   build:
