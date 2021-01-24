@@ -11,6 +11,7 @@ docker build -t vulcanize/postgraphile .
 
 | Name        | Default Value      | Comment                     |
 |-------------|--------------------|-----------------------------|
+| HOST        | 0.0.0.0            | Postgraphile host           |
 | PORT        | 5000               | Postgraphile port           |
 | SCHEMA      | public,eth         | Postgresql schema to expose |
 | PG_USER     | vdbm               | Postgresql user             |
