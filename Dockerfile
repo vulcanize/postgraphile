@@ -14,8 +14,9 @@ ENV PG_PASSWORD "password"
 ENV PG_HOST "contact-watcher-db"
 ENV PG_PORT 5432
 ENV PG_DATABASE "vulcanize_public"
+ENV INIT_DELAY 5
 
-CMD ["/bin/sh", "-c", "postgraphile \
+CMD ["/bin/sh", "-c", "sleep ${INIT_DELAY} && postgraphile \
      --plugins @graphile/pg-pubsub --subscriptions --simple-subscriptions \
      --connection postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE} \
      --port ${PORT} \
