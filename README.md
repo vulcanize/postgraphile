@@ -19,3 +19,6 @@ docker build -t vulcanize/postgraphile .
 | PG_HOST     | contact-watcher-db | Postgresql host             |
 | PG_PORT     | 5432               | Postgresql port             |
 | PG_DATABASE | vulcanize_public   | Postgresql database         |
+| INIT_DELAY  | 5                  | Initial delay (in seconds)  |
+
+Note: `INIT_DELAY` can be used to provide sufficient time for the database migrations to run, before starting `postgraphile` itself.
